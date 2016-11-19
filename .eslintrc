@@ -1,0 +1,18 @@
+{
+  "extends": "airbnb-base",
+  "parser": "babel-eslint",
+  "env": {
+    "mocha": true,
+    "node": true
+  },
+  "globals": {
+    "expect": true
+  },
+  "rules": {
+    "dot-notation": 0,
+    "new-cap": 0,
+    "no-param-reassign": 0,
+    "no-shadow": 0,
+    "no-underscore-dangle": 0
+  }
+}
