@@ -72,7 +72,7 @@ treat actionTypes other than `string` specially.
 
 Extra benefit of this little feature, is that it makes the separation between
 user actions and status updates more clear. Read more about this under 
-[best practice](#best-practice) and [integrations](#Integrations)
+[best practice](#best-practice) and [integrations](#integrations)
 
 ```js
 const CREATE_TODO = defineAction('CREATE_TODO', ['ERROR', 'SUCCESS']);
@@ -309,8 +309,8 @@ with [`redux-actions`][9].
 
 See [implementation example](#implementation-example) in this readme for implementation
 details. We handle [`redux-actions`][9] in [actions.js](#actionsjs) and 
-[reducer.js](#reducersjs) and [`redux-saga`][11] in [watchers.js](#watchersjs)
-and [sagas.js](#sagasjs);
+[reducer.js](#reducerjs) and [`redux-saga`][11] in [watchers.js](#watchersjs)
+and [sagas.js](#sagasjs).
 
 [1]: https://travis-ci.org/smeijer/redux-define
 [2]: https://www.npmjs.com
