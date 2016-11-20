@@ -1,7 +1,7 @@
 const NAMESPACE_SEPARATOR = '/';
 
 const defineAction = (type, subactions = [], namespace) => {
-  if (subactions && subactions.__name || typeof subactions === 'string') {
+  if (subactions && subactions.ACTION || typeof subactions === 'string') {
     namespace = subactions;
   }
 
@@ -15,7 +15,7 @@ const defineAction = (type, subactions = [], namespace) => {
     [i]: `${name}_${i}`,
   }), {});
 
-  action.__name = name;
+  action.ACTION = name;
   action.defineAction = (type, subactions) => defineAction(type, subactions, name);
 
   action.toString = () => name.toString();

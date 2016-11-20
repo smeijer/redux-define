@@ -10,6 +10,7 @@ describe('defineAction()', () => {
     it('has the given value', () => {
       const CREATE = defineAction('CREATE');
       expect(`${CREATE}`).to.equal('CREATE');
+      expect(CREATE.ACTION).to.equal('CREATE');
     });
 
     it('can be used in an reducer', () => {
@@ -26,6 +27,7 @@ describe('defineAction()', () => {
     it('can define subactions', () => {
       const CREATE = defineAction('CREATE', [ERROR, SUCCESS]);
       expect(`${CREATE}`).to.equal('CREATE');
+      expect(CREATE.ACTION).to.equal('CREATE');
       expect(CREATE.ERROR).to.equal('CREATE_ERROR');
       expect(CREATE.SUCCESS).to.equal('CREATE_SUCCESS');
     });
@@ -62,14 +64,17 @@ describe('defineAction()', () => {
       const todos = defineAction('todos', [LOADING], myApp);
       const CREATE = defineAction('CREATE', [ERROR, SUCCESS], todos);
 
+      expect(myApp.ACTION).to.equal('my-app');
       expect(myApp.LOADING).to.equal(undefined);
       expect(myApp.ERROR).to.equal(undefined);
       expect(myApp.SUCCESS).to.equal(undefined);
 
+      expect(todos.ACTION).to.equal('my-app/todos');
       expect(todos.LOADING).to.equal('my-app/todos_LOADING');
       expect(todos.ERROR).to.equal(undefined);
       expect(todos.SUCCESS).to.equal(undefined);
 
+      expect(CREATE.ACTION).to.equal('my-app/todos/CREATE');
       expect(CREATE.LOADING).to.equal(undefined);
       expect(CREATE.ERROR).to.equal('my-app/todos/CREATE_ERROR');
       expect(CREATE.SUCCESS).to.equal('my-app/todos/CREATE_SUCCESS');
