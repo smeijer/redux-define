@@ -1,6 +1,6 @@
 {
   "name": "redux-define",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Define action constants for Redux",
   "main": "lib/index.js",
   "scripts": {
