@@ -43,7 +43,7 @@ console.log('' + CREATE_TODO.ERROR);      // CREATE_TODO_ERROR
 console.log('' + CREATE_TODO.SUCCESS);    // CREATE_TODO_SUCCESS;
 ```
 
-Namespaces can be used to separate actions trough out modules and apps.
+Namespaces can be used to separate actions through out modules and apps.
 
 ```js
 const CREATE_TODO = defineAction('CREATE_TODO', ['ERROR', 'SUCCESS'], 'my-app');
