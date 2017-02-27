@@ -1,5 +1,7 @@
 # redux-define
 
+[![Join the chat at https://gitter.im/smeijer/redux-define](https://badges.gitter.im/smeijer/redux-define.svg)](https://gitter.im/smeijer/redux-define?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![build status](https://img.shields.io/travis/smeijer/redux-define/master.svg?style=flat-square)][1]
 
 [![NPM](https://nodei.co/npm/redux-define.png?downloads=true)][7]
