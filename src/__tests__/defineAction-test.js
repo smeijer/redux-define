@@ -89,7 +89,28 @@ describe('defineAction()', () => {
 
       expect(`${CREATE1}`).to.equal(`${CREATE2}`);
       expect(`${CREATE1.ERROR}`).to.equal(`${CREATE2.ERROR}`);
-      expect(`${CREATE1.SUCCESS}`).to.equal(`${CREATE1.SUCCESS}`);
+      expect(`${CREATE1.SUCCESS}`).to.equal(`${CREATE2.SUCCESS}`);
+    });
+
+    it('can use alternative defineAction method', () => {
+      const myApp = defineAction('my-app');
+      const todos = myApp.defineAction('todos', [LOADING]);
+      const CREATE = todos.defineAction('CREATE', [ERROR, SUCCESS]);
+
+      expect(myApp.ACTION).to.equal('my-app');
+      expect(myApp.LOADING).to.equal(undefined);
+      expect(myApp.ERROR).to.equal(undefined);
+      expect(myApp.SUCCESS).to.equal(undefined);
+
+      expect(todos.ACTION).to.equal('my-app/todos');
+      expect(todos.LOADING).to.equal('my-app/todos_LOADING');
+      expect(todos.ERROR).to.equal(undefined);
+      expect(todos.SUCCESS).to.equal(undefined);
+
+      expect(CREATE.ACTION).to.equal('my-app/todos/CREATE');
+      expect(CREATE.LOADING).to.equal(undefined);
+      expect(CREATE.ERROR).to.equal('my-app/todos/CREATE_ERROR');
+      expect(CREATE.SUCCESS).to.equal('my-app/todos/CREATE_SUCCESS');
     });
   });
 });
