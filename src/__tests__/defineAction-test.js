@@ -89,7 +89,7 @@ describe('defineAction()', () => {
 
       expect(`${CREATE1}`).to.equal(`${CREATE2}`);
       expect(`${CREATE1.ERROR}`).to.equal(`${CREATE2.ERROR}`);
-      expect(`${CREATE1.SUCCESS}`).to.equal(`${CREATE1.SUCCESS}`);
+      expect(`${CREATE1.SUCCESS}`).to.equal(`${CREATE2.SUCCESS}`);
     });
   });
 });
